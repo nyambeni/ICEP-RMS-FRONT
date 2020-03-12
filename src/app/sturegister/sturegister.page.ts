@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {ServiceService} from './../service.service';
 import { AlertController } from '@ionic/angular';  
+import { Observable, of, throwError } from 'rxjs';
 import {
   ReactiveFormsModule,
   FormsModule,
@@ -11,6 +13,7 @@ import {
 
 import { BrowserModule } from "@angular/platform-browser";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { RouterLink } from '@angular/router';
 
 
 
@@ -23,24 +26,147 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
   styleUrls: ['./sturegister.page.scss'],
 })
 export class SturegisterPage implements OnInit {
-
+  @Input() stuData= {firstName:" ", lastName:" ",email:" ", password:" ",campus_loc:" ",studno:" " ,id_no:" ",cell_no:" "}
  // name = new FormControl('');
-  constructor(public alertCtrl: AlertController) { }
-
+  constructor(public alertCtrl: AlertController, private _serviceService : ServiceService ) { }
+  addstu: any = [];
 
   myform: FormGroup;
   firstName: FormControl;
   lastName: FormControl;
   email: FormControl;
   password: FormControl;
-  passwordr: FormControl;
-  language: FormControl;
+  campus_loc= new FormControl;
+  studno= new FormControl;
+  id_no=new FormControl;
+  cell_no= new FormControl;
+
 
   ngOnInit() {
 
     this.createFormControls();
     this.createForm();
+    this.getstu();
   }
+
+
+  getstu(){
+    this._serviceService.postLandlord(this.addstu).subscribe((data: any)=>
+    {this.addstu=data;
+    console.log(this.addstu);
+    });
+  }
+
+
+
+
+  async add() {
+
+     if(this.myform.invalid){
+
+      const alert = await this.alertCtrl.create({  
+        header: 'Registration',  
+        message: ' please fill in all the fields ',  
+        buttons: ['OK'] 
+         
+      }
+     
+      
+  
+  
+      
+      );  
+  
+      await alert.present();  
+      const result = await alert.onDidDismiss();  
+      console.log(result);
+  
+  
+  
+     } 
+       
+
+
+
+
+
+
+    
+
+     
+  
+ 
+
+
+else{
+
+
+    this._serviceService.poststu(this.stuData).subscribe(
+data =>
+console.log(data));
+
+console.log(this.stuData.firstName);
+console.log(this.stuData.lastName);
+console.log(this.stuData.email);
+console.log(this.stuData.password);
+console.log(this.stuData.campus_loc);
+console.log(this.stuData.studno);
+console.log(this.stuData.id_no);
+console.log(this.stuData.cell_no);
+
+  
+
+const alert = await this.alertCtrl.create({  
+  header: 'Registration',  
+  message: ' you have successfully registered ',  
+  buttons: ['OK'] 
+   
+}
+
+
+
+
+
+);  
+
+await alert.present();  
+const result = await alert.onDidDismiss();  
+console.log(result);
+
+
+
+
+
+RouterLink['/login'];
+
+
+
+
+}
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,11 +181,23 @@ export class SturegisterPage implements OnInit {
       Validators.required,
       Validators.minLength(8)
     ]);
-    this.passwordr = new FormControl('', [
+
+//validate cell number
+  /*  this.cell_no = new FormControl('', [
       Validators.required,
-      Validators.minLength(8)
+      Validators.minLength(13),
+      Validators.pattern(" ")
     ]);
-    this.language = new FormControl('');
+
+*/
+
+
+
+
+//"/^\+27[0-9]{9}$/"
+
+
+  
 
     
   }
@@ -69,11 +207,20 @@ export class SturegisterPage implements OnInit {
       name: new FormGroup({
         firstName: this.firstName,
         lastName: this.lastName,
+       
+
+
+    
       }),
-      email: this.email,
-      password: this.password,
-      passwordr: this.passwordr,
-      language: this.language
+    //code was here
+    email: this.email,
+        password: this.password,
+        campus_loc:this.campus_loc,
+        studno: this.studno,
+        id_no: this.id_no,
+        cell_no: this.cell_no
+     
+   
     });
   }
 
@@ -85,15 +232,26 @@ export class SturegisterPage implements OnInit {
 
 
 
-
+/*
 
   async doSomething() {  
+    
+
+    this.stuData= {firstName:" ", lastName:" ",email:" ", password:" ",campus_loc:" ",studno:" " ,id_no:" ",cell_no:" "}
+    
+
     const alert = await this.alertCtrl.create({  
-      header: 'Alert',  
-      subHeader: 'SubTitle',  
-      message: 'This is an alert message',  
-      buttons: ['OK']  
-    });  
+      header: 'Registration',  
+      message: 'you are successfully registered',  
+      buttons: ['OK'] 
+       
+    }
+   
+    
+
+
+    
+    );  
 
 
 
@@ -105,7 +263,11 @@ export class SturegisterPage implements OnInit {
 
 
 
+   
+
 
 }
 
+
+*/
 }

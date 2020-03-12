@@ -22,6 +22,13 @@ export class AppComponent implements OnInit {
       url: 'login',
       icon: 'log-in'
     },
+
+    {
+      title: 'Logout ',
+      url: '/folder/folder',
+      icon: 'log-in'
+    },
+
     {
       title: 'Student Registration',
       url: 'sturegister',
@@ -33,19 +40,19 @@ export class AppComponent implements OnInit {
       icon: 'clipboard'
     },
     {
-      title: 'AboutUs',
-      url: '/folder/About',
+      title: 'How to Apply',
+      url: 'how-to-apply',
       icon: 'people'
     }
     ,
     {
       title: 'Contact',
-      url: '/folder/Contact',
+      url: 'contact',
       icon: 'people'
     }
 
   ];
-  public labels = ['', '', '', '', '', ''];
+
 
   constructor(
     private platform: Platform,

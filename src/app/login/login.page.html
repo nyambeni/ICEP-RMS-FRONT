@@ -1,71 +1,93 @@
+<ion-header style="background-color: black;">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button style="background-color: red;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="dark" style="color: white;" align="center">{{ folder }} </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 
-  <ion-header>
-    <ion-toolbar    color="dark"  >
-   
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title  align="center" > 
-     
-        
-      Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
 
 <ion-content login-header ion-padding>
-  <div class = "login-header ion-padding">
-    <img class = "logo-img" src="assets/icon/tut.png" alt="">
-  </div>
+  
   <div class = "ion-text-center">
-      <div heading-column-lr>
-       <h1 medium-heading >TUTEH PROPERTIES</h1>
-      </div>
+          <div heading-column-lr>
+            <h1 medium-heading align="center">WELCOME TO TUTEH PROPERTIES</h1>
+           </div>
+      
+   
+  <form>
+<div class="ion-radio">
 
-
-      <ion-item transparent>
-      <ion-label position="floating"></ion-label>
-         <ion-input ngModel name = "loginData.email" #email = "ngModel" placeholder = "E-MAIL" type= "text" required></ion-input>
-         <div *ngIf = "!email.valid && email.touched">
-           <div *ngIf = "email.errors.required">email required</div>
-
-           <div *ngIf = "email != loginData.password">
-            <div *ngIf = "email.errors">email doesn't exist</div>
-          </div>
-           
-         </div>
-        </ion-item>
-
-     
-      <ion-item transparent>
-        <ion-label position="floating"></ion-label>
-        <ion-input ngModel name  = "loginData.password"  #pwd = "ngModel" placeholder = "PASSWORD" type= "password" required></ion-input>
-        <div *ngIf = "!pwd.valid && pwd.touched">
-        <div *ngIf = "pwd.errors.required">password required</div>
-
-        <div *ngIf = "pwd != loginData.password">
-          <div *ngIf = "pwd.errors">wrong password</div>                                            
-        </div>
-        </div>
+  <ion-radio-group>
+      <ion-row radio-group >
+        
+      <ion-col>
+      <ion-item lines="none">
+        <ion-label>
+          Admin
+        </ion-label>
+       <ion-radio value = "3"></ion-radio>
       </ion-item>
+      </ion-col>
 
-    <ion-label class = "ion-text-right"> <span class = "link-button"
-      (click) = "forgetPassword()"> Forget Password</span></ion-label>
+       <ion-col>
+      <ion-item lines="none">
+        <ion-label >
+          Student
+        </ion-label>
+        <ion-radio value = "1" checked></ion-radio>
+      </ion-item>
+    </ion-col>
+
+    <ion-col>
+      <ion-item lines="none">
+        <ion-label >
+          Landlord
+        </ion-label>
+       <ion-radio value = "2"></ion-radio>
+      </ion-item>
+    </ion-col>
+
+  </ion-row>   
+</ion-radio-group> 
+    
+  </div>
 
     <div linespace></div>
- 
-    <ion-button class = "ion-text-center" color="primary" 
-     (click)="login()">Sign In</ion-button>
+<!--  
+    <ion-button routerLink="/student-dash" class = "ion-text-center" color="primary" 
+     (click)="loginAction()">Sign In</ion-button> -->
     <br>
+
+<ion-item transparent>
+  <ion-label position = "floating">EMAIL</ion-label>
+<ion-input autocomplete = "off" name="email" type="text" [(ngModel)]="postData.email"></ion-input>    
+</ion-item>
+
+
+<ion-item transparent> 
+<ion-label position = "floating">PASSWORD</ion-label>
+<ion-input autocomplete = "off" name="password" type="password" [(ngModel)]="postData.password"></ion-input> 
+</ion-item>
+
+<div class="log">
+
+<a routerLink="/forget">Forget Password</a>
+</div>
+<div linespace></div>
+
+<ion-button class = "ion-text-center" color="primary" 
+(click)="loginAction()">Sign In</ion-button>
+<br>
+
 <br><br>
-     <ion-button class = "ion-text-center" color="primary" 
-     (click)="Register()">Create New Account</ion-button>
 
-   
-    
+<p>New User?  <a routerLink="/stud-orlord">Create Account</a></p>
 
-    
-      
-  </div> 
+
+</form>
+</div> 
 </ion-content>
-

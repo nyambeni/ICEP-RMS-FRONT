@@ -6,20 +6,13 @@ ion-menu-button {
 
 ion-card{
 
-background-image: url("tut1.jpg");
-  background-position: center;
 
-  width: 2000px;
-  height: 350px;
+  background-position: center;
+  padding-bottom: 0;
+
  // animation: animate 16s ease-in-out infinite;
  
 }
-.we
-{
-  background-color: yellow;
-  opacity: 0.5;
-}
-
 
   
 
@@ -58,7 +51,11 @@ height: 350px;
     }
  
 }
-
+ion-button
+{
+  height: 80px; 
+  width:200px;
+}
 
 
 
@@ -133,27 +130,25 @@ a:-webkit-any-link {
 margin-top: 100px;
 }
 
- ion-content
- {
+ ion-content{
    --overflow:hidden;
    text-align: center;
+   object-fit: contain;
+   object-position: 50% 50%;
  }
 
- ion-slide p
- {
-  margin: 0;
-  font-size: 13px;
-  line-height: 15px;
-  margin-top: 0;
-  padding-left: 35px;
-  padding-right: 35px;
-  padding-top: 10px;
-  padding-bottom: 30px;
-  margin-bottom: 10px;
- }
 
  .center
  {
    margin-top: 0;
    margin-bottom: 0;
  }
+ .ion-activatable{
+  position: relative;
+  overflow: hidden;
+  
+}
+ion-col
+{
+ margin:5px;
+}
