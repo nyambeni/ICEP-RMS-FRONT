@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { StudORlordPageRoutingModule } from './stud-orlord-routing.module';
+import { ManagesystemPageRoutingModule } from './managesystem-routing.module';
 
-import { StudORlordPage } from './stud-orlord.page';
+import { ManagesystemPage } from './managesystem.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StudORlordPageRoutingModule
+    ManagesystemPageRoutingModule
   ],
-  declarations: [StudORlordPage]
+  declarations: [ManagesystemPage]
 })
-export class StudORlordPageModule {}
+export class ManagesystemPageModule {}

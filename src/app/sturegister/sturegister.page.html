@@ -1,130 +1,24 @@
-
-<!---
-
-<ion-content>
-  <form action="">
   
-    <ion-header>
-      <ion-toolbar color="success">
-        <ion-title>
-          Residence Management System
-        </ion-title>
-      </ion-toolbar >
-    </ion-header>
-    
-  
-  
-  
-    <ion-header>
-      <ion-toolbar >
-        <ion-title>
-          Register Here
-        </ion-title>
-      </ion-toolbar >
-    </ion-header>
-  
-  
-  
-  
-  <div padding class="pad">
-    <ion-item>
-      <ion-label position="floating">Enter Name</ion-label>
-      <ion-input  id="name" name="name" class="form-control" required minlength="4"type="text">
-      </ion-input>
-    </ion-item>
-  </div>
-  
-  <div padding class="pad">
-    <ion-item>
-      <ion-label position="floating">Enter Surname</ion-label>
-      <ion-input type="text">
-      </ion-input>
-    </ion-item>
-  </div>
-         
-          
-  
-  
-  <div padding class="pad">
-    <ion-item>
-        
-      <ion-label position="floating">Enter Email</ion-label>
-      <ion-input type="email">
-      </ion-input>
-    
-    </ion-item>
-  </div>
-  
-  
-  
-  <div padding class="pad">
-    <ion-item>
-      <ion-label position="floating">Enter cell number</ion-label>
-      <ion-input  type="tel"  required="true" clearInput=true minlength="10"  >
-      </ion-input>
-    </ion-item>
-    
-  </div>
-  
-  
-  
-  
-  
-  
-  <div padding class="pad">
-    <ion-item>
-      <ion-label position="floating">Enter Password</ion-label>
-      <ion-input  type="Password">
-      </ion-input>
-    </ion-item>
-    
-  </div>
-  <ion-button (click)="doSomething()"shape="round" color="success">Register </ion-button>
-     <ion-button shape="round" color="success">Sign In</ion-button>
-  </form>
-  </ion-content>
-  
-  
-  
-  
-     
-  
-  
-  
-  
-  
-
--->
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <ion-header>
-    <ion-toolbar    color="dark"  >
-   
-      <ion-buttons style="background-color: red;" slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title  align="center" > 
-     
-        
-        Register Here AS Student</ion-title>
-    </ion-toolbar>
-  </ion-header>
-<ion-card>
+<!-- <ion-card>
   <img src="assets/pics/tut1.jpg" width="1500px" height="200px" alt="">
-</ion-card>
-<ion-content>
+</ion-card> -->
+
+ <ion-content >
+  <ion-toolbar>
+    <ul class="sidebar-nav" style="text-align: center;font-size: small">
+      <div style="text-align:left;font-size: small; ">
+        <img src="assets/pics/logo.png" width="80px" height="40px" alt="">
+       </div>
+      <li><a routerLink="/help/helpstud">HELP</a></li>
+      <li><a routerLink="#">FAQS</a></li>
+      <li><a routerLink="/folder/home">HOME</a></li>
+    </ul>
+    <br>
+  </ion-toolbar>
+
+  <br><br> <br> <br>
+
+  <p style="color: white;">Register to create an account</p>
   <div class="container">
   <form novalidate
       [formGroup]="myform" >
@@ -134,18 +28,16 @@
 
 
   
-  <fieldset formGroupName="name">
+ <!-- <fieldset formGroupName="name">
 
     <div class="form-group"
          [ngClass]="{
         'has-danger': firstName.invalid && (firstName.dirty || firstName.touched),
         'has-success': firstName.valid && (firstName.dirty || firstName.touched)
       }">
-
-      <ion-label position="fixed">First Name:</ion-label>
       <ion-item>
-    
-      
+      <ion-label position="fixed">First Name:</ion-label>
+    <br>
       <ion-input type="text"
       
              class="form-control"
@@ -163,23 +55,24 @@
 
 
 
-      <!--
+      
         <pre>Valid? {{ myform.controls.name.controls.firstName.valid }}</pre>
         <pre>Dirty? {{ myform.controls.name.controls.firstName.dirty }}</pre>
-      -->
-    </div>
+     
+    </div> -->
 
 
 
 
-    <div class="form-group"
+    <!-- <div class="form-group"
          [ngClass]="{
         'has-danger': lastName.invalid && (lastName.dirty || lastName.touched),
         'has-success': lastName.valid && (lastName.dirty || lastName.touched)
       }">
-      <ion-label position="fixed">Last Name:</ion-label>
       <ion-item>
+      <ion-label position="fixed">Last Name:</ion-label>
       
+      <br>
       <ion-input type="text"
       required  [(ngModel)] = "stuData.lastName"
              class="form-control"
@@ -192,31 +85,25 @@
       </div>
     </ion-item>
     </div>
+    <ion-item>
+      <ion-label position="fixed">Gender</ion-label>
+      <br>
+      <ion-input [(ngModel)] = "stuData.gender" type="gender"
+       
+             
+             required>
+             </ion-input></ion-item>
 
-
-
-
-
-
-
-
-    
   </fieldset>
-
-
-
-
-
-
-
 
   <div class="form-group"
        [ngClass]="{
         'has-danger': email.invalid && (email.dirty || email.touched),
         'has-success': email.valid && (email.dirty || email.touched)
    }">
-   <ion-label position="fixed">Email:</ion-label>
    <ion-item>
+   <ion-label position="fixed">Email:</ion-label>
+   <br>
     
     <ion-input type="email"
     required  [(ngModel)] = "stuData.email"
@@ -231,23 +118,15 @@
     </div>
   </ion-item>
 
-    <!--
+    
       <pre>Valid? {{ myform.controls.email.valid }}</pre>
       <pre>Dirty? {{ myform.controls.email.dirty }}</pre>
-    -->
+   
 
-  </div>
+  </div> -->
 
-
-
-
-
-
-
-
-
-
-
+  
+  
 
 
 
@@ -258,9 +137,8 @@
         'has-danger': studno.invalid && (studno.dirty || studno.touched),
         'has-success': studno.valid && (studno.dirty || studno.touched)
    }">
-   <ion-label position="fixed">Student NO:</ion-label>
    <ion-item>
-    
+   <ion-label position="floating"><ion-icon name="person"></ion-icon> STUDENT NUMBER</ion-label>
     <ion-input type="number"
     required  [(ngModel)] = "stuData.studno"
            class="form-control"
@@ -283,33 +161,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="form-group"
+  <!-- <div class="form-group"
        [ngClass]="{
         'has-danger': id_no.invalid && (id_no.dirty || id_no.touched),
         'has-success': id_no.valid && (id_no.dirty || id_no.touched)
    }">
-   <ion-label position="fixed">ID Number:</ion-label>
    <ion-item>
-    
+   <ion-label position="fixed">ID Number:</ion-label>
+  
+    <br>
     <ion-input type="number"
     required  [(ngModel)] = "stuData.id_no"
            class="form-control"
@@ -323,38 +183,19 @@
     </div>
   </ion-item>
 
-    <!--
+    
       <pre>Valid? {{ myform.controls.email.valid }}</pre>
       <pre>Dirty? {{ myform.controls.email.dirty }}</pre>
-    -->
+   
 
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="form-group"
+  </div> -->
+  <!-- <div class="form-group"
        [ngClass]="{
         'has-danger': cell_no.invalid && (cell_no.dirty || cell_no.touched),
         'has-success': cell_no.valid && (cell_no.dirty || cell_no.touched)
    }">
    <ion-label position="fixed">cell Number:</ion-label>
-   <!-- ion item-->
+  
     
     <ion-input type="number"
     required  [(ngModel)] = "stuData.cell_no"
@@ -365,42 +206,17 @@
     <div class="form-control-feedback"
          *ngIf="cell_no.errors && (cell_no.dirty || cell_no.touched)">
       <p style="color:red" *ngIf="cell_no.errors.required">cell number is required</p>
-    <!-- <p style="color:red" *ngIf="cell_no.errors.pattern">please provide south african cell number</p> -->
     </div>
  
 
-    <!--
-      <pre>Valid? {{ myform.controls.email.valid }}</pre>
-      <pre>Dirty? {{ myform.controls.email.dirty }}</pre>
-    -->
-
-  </div>
+   
+  </div> -->
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="form-group"
+  <!-- <div class="form-group"
   [ngClass]="{
    'has-danger': password.invalid && (password.dirty || password.touched),
    'has-success': password.valid && (password.dirty || password.touched)
@@ -425,29 +241,16 @@
   </ion-item>
 
   </div>
+ -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
   <div class="form-group"
        [ngClass]="{
         'has-danger': password.invalid && (password.dirty || password.touched),
         'has-success': password.valid && (password.dirty || password.touched)
    }">
-   <ion-label position="fixed">Password: </ion-label>
    <ion-item>
+   <ion-label position="floating"><ion-icon name="lock-closed"></ion-icon> CREATE PASSWORD</ion-label>
    
     <ion-input   
     required  [(ngModel)] = "stuData.password"
@@ -465,6 +268,24 @@
   </ion-item>
 
 </div>
+
+<div class="form-group"
+       [ngClass]="{
+        'has-danger': password.invalid && (password.dirty || password.touched),
+        'has-success': password.valid && (password.dirty || password.touched)
+   }">
+   <ion-item>
+   <ion-label position="floating"> <ion-icon name="lock-closed"></ion-icon> CONFIRM PASSWORD</ion-label>
+   
+   
+    <ion-input>   
+   
+           </ion-input>
+   
+  </ion-item>
+
+</div>
+
 
 
 
@@ -520,14 +341,38 @@
   -->
   <!--   *ngIf="(passwordControl.value != rPasswordControl.value) && !rPasswordControl.errors?.required"          -->
   
+  <!-- <div class="form-group">
+    <ion-item>
+      <ion-label for="image">Insert Image</ion-label>
+    </ion-item>
+    <img width="100" src="../../assets/pics/user1.jpg">
+  </div>
+  <div class="form-group">
+   
+  <ion-item>
+    <ion-input type="file" name="images" ></ion-input>
+  </ion-item>
+  </div> -->
 
-
-  <ion-button   (click)=" add()" shape="round" color="dark" position="floating">Register </ion-button>
-  <a routerLink="/login"> <ion-button  shape="round" color="dark"  position="floating">Sign In</ion-button> </a>
+  <!-- <ion-button   (click)=" add()" shape="round" color="dark" position="floating">Register </ion-button>
+  <a routerLink="/login"> <ion-button  shape="round" color="dark"  position="floating">Sign In</ion-button> </a> -->
+ 
   <!--
     <
       pre>{{ password.errors | json }}</pre>
   -->
+<br>
+<p style="color: white;">By signing up, you confirm that you've read
+   and accepted our <a href="https://tres-images-storage.s3-eu-west-1.amazonaws.com/Privacy+Policy+20200408.pdf" style="color: rgb(8, 243, 106);;">Terms of Service and Privacy Policy</a></p>
+<br>
+
+  <ion-button expand="block" color="success" (click)=" add()">
+    
+    SIGN UP
+  </ion-button>
+  <br>
+  <p style="color: white; text-align: right;">Have an account? sign in <a routerLink="/login1" style="color: rgb(8, 243, 106);;">here</a></p>
+ 
   </form>
 </div>
 </ion-content>

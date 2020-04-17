@@ -1,7 +1,8 @@
 
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { FilterPipe} from './filter.pipe';
+import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -27,16 +28,14 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'stud-orlord',
-    loadChildren: () => import('./stud-orlord/stud-orlord.module').then( m => m.StudORlordPageModule)
-  },
-  {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
   },
   {
     path: 'stud-profile',
-    loadChildren: () => import('./stud-profile/stud-profile.module').then( m => m.StudProfilePageModule)
+    loadChildren: () => import('./stud-profile/stud-profile.module').then( m => m.StudProfilePageModule),
+    // canActivate:[AuthGuard]
+    
   },
   {
     path: 'soshanguve',
@@ -107,7 +106,30 @@ const routes: Routes = [
     path: 'studstatus',
     loadChildren: () => import('./studstatus/studstatus.module').then( m => m.StudstatusPageModule)
 
+  },
+  {
+    path: 'login1',
+    loadChildren: () => import('./login1/login1.module').then( m => m.Login1PageModule)
+  },
+  {
+    path: 'help/helplord',
+    loadChildren: () => import('./help/helplord/helplord.module').then( m => m.HelplordPageModule)
+  },
+  {
+    path: 'help/helpstud',
+    loadChildren: () => import('./help/helpstud/helpstud.module').then( m => m.HelpstudPageModule)
+  },
+  {
+    path: 'manageprovider',
+    loadChildren: () => import('./admin/manageprovider/manageprovider.module').then( m => m.ManageproviderPageModule)
+  },
+  {
+    path: 'managesystem',
+    loadChildren: () => import('./admin/managesystem/managesystem.module').then( m => m.ManagesystemPageModule)
   }
+
+
+
 
 
 ];
@@ -116,6 +138,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
+ 
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

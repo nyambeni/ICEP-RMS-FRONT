@@ -11,17 +11,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { ShareService } from '../share/share';
 import { HttpModule }from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
- 
+import { FilterPipe } from './filter.pipe';
+//import {IonicStorageModule} from '@ionic/storage';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FilterPipe],
   entryComponents: [],
   imports: [
     HttpClientModule,
+    //IonicStorageModule.forRoot(),
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(),
+    ReactiveFormsModule,
     AppRoutingModule,
+   
     FormsModule, ReactiveFormsModule
     
   ],
@@ -30,6 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SplashScreen,
     HttpModule,
     ShareService,
+    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
     
     
