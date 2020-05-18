@@ -12,7 +12,16 @@ import { ShareService } from '../share/share';
 import { HttpModule }from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
-//import {IonicStorageModule} from '@ionic/storage';
+import {IonicStorageModule} from '@ionic/storage';
+import {StreamingMedia} from '@ionic-native/streaming-media/ngx';
+import { PopemailPageModule } from './popover/popemail/popemail.module';
+import { PopstdPageModule } from './popover/popstd/popstd.module';
+import { PopratePageModule } from './popover/poprate/poprate.module';
+import { PopreportPageModule } from './popover/popreport/popreport.module';
+import {PopaccPageModule} from './popover/popacc/popacc.module';
+import { PopconPageModule } from './popover/popcon/popcon.module';
+import { PopaddPageModule } from './popover/popadd/popadd.module';
+
 
 
 @NgModule({
@@ -20,12 +29,20 @@ import { FilterPipe } from './filter.pipe';
   entryComponents: [],
   imports: [
     HttpClientModule,
-    //IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot(),
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(),
     ReactiveFormsModule,
     AppRoutingModule,
+    //popup
+   PopemailPageModule,
+   PopstdPageModule,
+   PopratePageModule,
+   PopreportPageModule,
+   PopaccPageModule,
+   PopconPageModule,
+   PopaddPageModule,      
    
     FormsModule, ReactiveFormsModule
     
@@ -35,9 +52,8 @@ import { FilterPipe } from './filter.pipe';
     SplashScreen,
     HttpModule,
     ShareService,
-    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-    
+    ,StreamingMedia
     
   ],
   bootstrap: [AppComponent],

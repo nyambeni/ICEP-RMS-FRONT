@@ -2,19 +2,21 @@
 <ion-content>
 
   <ion-toolbar>
-    <ul class="sidebar-nav" style="text-align: center;font-size: small">
-      <div style="text-align:left;font-size: small; ">
-        <img src="assets/pics/logo.png" width="80px" height="40px" alt="">
-       </div>
+    <div slot="start" style="font-size: small; ">
+      <img src="assets/pics/logo.png" width="80px" height="40px" alt="">
+     </div>
+     <div >
+    <ul class="sidebar-nav" style="font-size: small; float: right;">
       <li><a routerLink="/help/helpstud">HELP</a></li>
       <li><a routerLink="#">FAQS</a></li>
       <li><a routerLink="/folder/home">HOME</a></li>
     </ul>
+  </div>
   </ion-toolbar>
 
   <br><br> <br> <br>
 
-  <p style="color: white;">Sign in to access your account</p>
+  <p style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;color: white;text-align: left;">   Sign in to access your account</p>
   <ion-card style="background-color: white; color:black; border: solid rgb(8, 243, 106) 2px;">
     
      
@@ -22,42 +24,47 @@
     
     </ion-card>
 
-  <form>
-
-    
-
     <br>
 
 <ion-item transparent>
   <ion-label position = "floating"><ion-icon name="person"></ion-icon> STUDENT NUMBER</ion-label>
-<ion-input ></ion-input>    
+<ion-input type = "number" [(ngModel)]="studno" ></ion-input>    
 </ion-item>
-<!-- [(ngModel)] = "loginUserData.email" type="email" id = "email" name ="email" class="form-control"
-#email = "ngModel" autofocus required email ngModel
-<div class="alert alert-danger" role="alert" *ngIf="email.invalid && (email.dirty || email.touched)">
-  Please enter a valid email.
-</div> -->
+
 
 <ion-item transparent> 
 <ion-label position = "floating"><ion-icon name="lock-closed"></ion-icon> PASSWORD</ion-label>
-<ion-input  ></ion-input> 
+<ion-input  type = "password" [(ngModel)]="pwd"></ion-input> 
 </ion-item>
-<!--[(ngModel)]="loginUserData.password" type="password" name="password" id="password" class="form-control"
-placeholder="" #Password="ngModel" required minlength="8" maxlength="20" ngModel
-<div class="alert alert-danger" role="alert" *ngIf="Password.invalid && (Password.dirty || Password.touched)" style="color:red">
-  Please enter a valid password between 8 to 20 chars.
-</div> -->
+
 <br>
+<div class="hover">
+<a routerLink = "/resproof">
 <ion-button class = "ion-text-center" expand="block" color="success" 
-(click)="loginStud()">Sign In</ion-button>
+(click)="loginStud()">Sign In</ion-button></a>
+</div>
 <br>
-<p style="text-align: left;color: white;">No account? sign up<a routerLink="/sturegister" style="color: rgb(8, 243, 106);">here</a></p>
+
+<ion-toolbar>
+  <div slot="end"  >
+    <a routerLink="/sturegister" style="color: rgb(8, 243, 106);">
+    <p style="color: rgb(8, 243, 106);border-bottom: solid 2px;">No account? sign up here</p>
+    </a>
+  </div>
+
+  <div slot="start" >
+    <!-- <a routerLink="/popemail" ><p style="color: rgb(8, 243, 106);border-bottom: solid 2px;">Forget your password</p></a>
+   -->
+   <p><ion-button style="color: rgb(8, 243, 106);border-bottom: solid 2px;text-transform: none;" size="small"
+    color= "transparent" (click)= "popOver($event)" >Forgot your password</ion-button></p>
+  
+  </div>
+  </ion-toolbar>
 
 
 
 
 
 
-</form>
   
 </ion-content>
