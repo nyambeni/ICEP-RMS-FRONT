@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start" style="color: whitesmoke;">
+        <ion-icon name="menu" (click)="presentMenu()"></ion-icon>
+    </ion-buttons> 
+    <ion-title align="center">Landlord Manage Properties</ion-title>
+     </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+   
+  
+
+    <ion-grid style="background-image: url('assets/pics/landlord.jpg');" col="12">
+
+      <ion-card   col="12" *ngFor= "let a of addProp" style=" background-color:rgb(27, 219, 245); color: black; opacity: 0.8;border-radius: 10px;">
+      
+       
+        <br>
+        <ion-label>
+          PROPERTY NAME: {{a.username}}
+        </ion-label>
+   
+       <br>
+       <br>
+       <ion-label>
+        PROPERTY ADDRESS:{{a.phone}}
+       </ion-label>
+      
+       <br>
+       <br>
+       <ion-label>
+        PROPERTY ADMIN: {{a.name}}
+       </ion-label>
+       <br>
+       <br>
+       <a routerLink="/landloard-app"><ion-button  (click)="add()"><ion-icon name="add">
+       </ion-icon></ion-button></a>
+       <a routerLink="/editprop">
+       <ion-button color="success" (click)="update()">
+        <ion-icon name="create"></ion-icon></ion-button></a>
+   
+
+       
+       <ion-button color="danger" (click)="delete()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+
+
+      
+     </ion-card>
+  
+     <br>
+     <br>
+     <br>
+     <br>
+   </ion-grid>
+  
+  
+  
+  
+   
+      
+        
+      
+ 
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    
+  
+<ion-footer  class="ion-footer">
+  <ion-toolbar >
+    <ion-title align="center" >2020 Off campus accomodation</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+</ion-content>
+

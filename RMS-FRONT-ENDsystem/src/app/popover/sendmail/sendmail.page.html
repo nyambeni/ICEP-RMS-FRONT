@@ -1,0 +1,25 @@
+<ion-list>
+  
+  <h1 style="font-size: 18px;font-weight: bold;margin-top:10px; margin-left: 40px;border-left: 10px 	rgb(27, 219, 245)solid">Send a warning</h1>
+
+   <p style="font-size: 14px;">Send the landlord a warning message for not providing good services to student</p>
+  
+   <ion-label postion="floating" style="font-size: 12px;"></ion-label>
+  <ion-input style="border-bottom: solid 2px; " placeholder=" Student Number" ></ion-input>
+
+  <p>If you do not attend this student needs as you promised by 2 days, we will be forced to take further actions.
+    
+  </p>
+ 
+
+  <ion-toolbar>
+
+     <div slot="start">
+       <ion-button  type = "button" (click)="sendEmail()">Send</ion-button>
+     </div>
+
+     <div slot="end">
+      <ion-button color= "light" (click)="closePop()" >Cancel</ion-button>
+     </div>
+  </ion-toolbar>
+</ion-list>

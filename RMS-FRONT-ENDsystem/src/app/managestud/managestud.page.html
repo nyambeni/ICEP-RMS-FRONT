@@ -1,0 +1,417 @@
+
+
+<ion-router-outlet id="content1" color="dark" ></ion-router-outlet>
+
+<ion-header>
+  <ion-toolbar >
+  
+    <ion-buttons slot="start">
+      <a routerLink= "/admindash"><ion-icon name="return-down-back-outline" style="font-weight: bold;font-size: 20px;">
+      </ion-icon></a>
+    </ion-buttons>
+
+      <li><a routerLink="/folder/Home"><ion-icon name="log-out-outline" style="font-size: 20px; background-color:rgb(36, 207, 36)
+        ; color: white ;" >previous</ion-icon></a></li>
+        <li> <div class="border">
+              </div>
+        </li>
+  
+        
+
+
+     
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+
+
+
+  <ion-card style="margin-left:80px ; width:220px ;border-radius: 20px; height:50px ;background-color: white;color: rgb(6, 2, 73);">
+   
+    <ion-label style="color:black ; ;margin-left: 60px;margin-top:-30px;font-size:14px; text-align: left;">
+     Manage
+    </ion-label>
+   </ion-card>
+ <ion-card style="background-color: rgb(36, 207, 36);
+ margin-left: 280px;margin-top: -60px;
+ border-radius: 20px; height:50px ; width:220px ; " >
+  
+  <ion-label style="margin-left: 60px;margin-top:-30px;color:white;
+   font-size:14px;margin-left: 30px;width:50px ;">
+   Students
+  </ion-label>
+ </ion-card> 
+
+
+
+
+
+  <div class="tab">
+    <button class="tablinks" (click)="openCity(event, 'card')">ISSUES</button>
+    <button class="tablinks" (click)="openCity(event, 'Rate')">RATES</button>
+    <button class="tablinks" (click)="openCity(event, 'Students')">VIEW ALL STUDENTS</button>
+    
+  </div>
+     
+  <ion-card class="mySlides" style="background-image:url(assets/pics/s1.jpg) ;height: 150px;" > 
+
+    
+      
+    <h1 style="font-size: 30px;font-weight: bolder;color: white; text-align: center;">Tres Students</h1>
+   
+    <h3 style="font-size: 20px;font-weight: bolder;color:rgb(36, 207, 36); text-align: center;">Here is where you see all the students details, issues and the ratings about their rooms</h3>
+        
+        
+
+  </ion-card>
+  
+<div id = "card" class="tabcontent"  >
+  <ion-title style="text-align: center">Click Property Name to View Issues</ion-title>
+  
+<ion-row>
+  
+<ion-col>
+
+  <ion-card  *ngFor= "let item of addProp " (click)="openCity(event, 'i4')">
+    <ion-toolbar>
+      <div slot="start">
+        <ion-title style="font-size: 18px; font-weight: bold;color: 
+        rgb(6, 2, 73);margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(6, 2, 73)solid ">Issues</ion-title>
+      </div >
+
+      <div style="color: rgb(6, 2, 73);margin-right: 10px;" slot="end">
+          <ion-button shape="round" color="dark">
+            <ion-icon name="hammer-outline"></ion-icon>
+             2</ion-button>             
+     </div>
+    </ion-toolbar>
+    
+    <ion-title>{{item.property_name}}</ion-title>
+
+  </ion-card>
+</ion-col>
+</ion-row>
+
+</div>
+
+  <div id="i1" class="tabcontent">
+    
+    <h1>Issues</h1>
+    <ion-searchbar></ion-searchbar>
+    <table class="rwd-table">
+      
+      <tr>
+        <th>Notice Sent</th>
+        <th>Student Number</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Send an email</th>
+      </tr>
+      <tr>
+        <td data-th="Period">2 weeks ago</td>
+        <td data-th="Student Number">214587452</td>
+        <td data-th="Description">Lights not working</td>
+        <td data-th="Status">In- progress</td>
+        <td data-th="Send an email"><ion-button color="warning" (click)= "send($event)">send a warning to landlord</ion-button>
+        
+          
+      </td>
+      </tr>
+      <tr>
+        <td data-th="Period">1 week ago</td>
+        <td data-th="Student Number">201457852</td>
+        <td data-th="Description">stove not working</td>
+        <td data-th="Status">Pending</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">3 weeks ago</td>
+        <td data-th="Student Number">211278512</td>
+        <td data-th="Description">socket not working</td>
+        <td data-th="Status">Rejected</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="i2" class="tabcontent">
+    
+    <h1>Issues</h1>
+    <ion-searchbar></ion-searchbar>
+    <table class="rwd-table">
+      
+      <tr>
+        <th>Notice Sent</th>
+        <th>Student Number</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Send an email</th>
+      </tr>
+      <tr>
+        <td data-th="Period">2 weeks ago</td>
+        <td data-th="Student Number">201452684</td>
+        <td data-th="Description">Lights not working</td>
+        <td data-th="Status">In- progress</td>
+        <td data-th="Send an email"><ion-button  color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">1 week ago</td>
+        <td data-th="Student Number">201457896</td>
+        <td data-th="Description">stove not working</td>
+        <td data-th="Status">Pending</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">3 weeks ago</td>
+        <td data-th="Student Number">201478965</td>
+        <td data-th="Description">socket not working</td>
+        <td data-th="Status">Rejected</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="i3" class="tabcontent">
+    
+    <h1>Issues</h1>
+    <ion-searchbar></ion-searchbar>
+    <table class="rwd-table">
+      
+      <tr>
+        <th>Notice Sent</th>
+        <th>Student Number</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Send an email</th>
+      </tr>
+      <tr>
+        <td data-th="Period">2 weeks ago</td>
+        <td data-th="Student Number">213541327</td>
+        <td data-th="Description">Lights not working</td>
+        <td data-th="Status">In- progress</td>
+        <td data-th="Send an email"><ion-button  color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">1 week ago</td>
+        <td data-th="Student Number">211545874</td>
+        <td data-th="Description">stove not working</td>
+        <td data-th="Status">Pending</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+    
+    </table>
+  </div>
+
+  <div id="i4" class="tabcontent">
+    
+    <h1>Issues</h1>
+    <ion-searchbar></ion-searchbar>
+    <table class="rwd-table">
+      
+      <tr>
+        <th>Notice Sent</th>
+        <th>Full Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Send an email</th>
+      </tr>
+      <tr>
+        <td data-th="Period">2 weeks ago</td>
+        <td data-th="Student Number">211562486</td>
+        <td data-th="Description">Lights not working</td>
+        <td data-th="Status">In- progress</td>
+        <td data-th="Send an email"><ion-button  color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">1 week ago</td>
+        <td data-th="Student Number">211547896</td>
+        <td data-th="Description">stove not working</td>
+        <td data-th="Status">Pending</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">3 weeks ago</td>
+        <td data-th="Student Number">126548624</td>
+        <td data-th="Description">socket not working</td>
+        <td data-th="Status">Rejected</td>
+        <td data-th="Send an email"><ion-button  color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">5 weeks ago</td>
+        <td data-th="Student Number">214598745</td>
+        <td data-th="Description">socket not working</td>
+        <td data-th="Status">Pending</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">5 weeks ago</td>
+        <td data-th="Student Number">214598745</td>
+        <td data-th="Description">socket not working</td>
+        <td data-th="Status">Pending</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+      <tr>
+        <td data-th="Period">6 weeks ago</td>
+        <td data-th="Student Number">214598745</td>
+        <td data-th="Description">socket not working</td>
+        <td data-th="Status">Pending</td>
+        <td data-th="Send an email"><ion-button   color="warning" (click)= "send($event)">send a warning to landlord</ion-button></td>
+      </tr>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+  
+  <div id="Rate" class="tabcontent">
+    
+    <h1>Ratings in %</h1>
+    <ion-searchbar></ion-searchbar>
+    <table class="rwd-table">
+      
+      <tr>
+        <th>Property Name</th>
+        <th>very_satisfied</th>
+        <th>satisfied</th>
+        <th>okey</th>
+        <th>disappointed</th>
+        <th>very_disappointed</th>
+        
+      </tr>
+      <tr>
+        <td data-th="Property Name">Khoza</td>
+        <td data-th="very_satisfied">60%</td>
+        <td data-th="satisfied">20%</td>
+        <td data-th="okey">10%</td>
+        <td data-th="disappointed">10%</td>
+        <td data-th="very_disappointed">10%</td>
+      
+      </tr>
+      <tr>
+        <td data-th="Property Name">Legae</td>
+        <td data-th="very_satisfied">70%</td>
+        <td data-th="satisfied">20%</td>
+        <td data-th="okey">5%</td>
+        <td data-th="disappointed">5%</td>
+        <td data-th="very_disappointed">0%</td>
+      </tr>
+      <tr>
+        <td data-th="Property Name">Twala</td>
+        <td data-th="very_satisfied">30%</td>
+        <td data-th="satisfied">40%</td>
+        <td data-th="okey">20%</td>
+        <td data-th="disappointed">5%</td>
+        <td data-th="very_disappointed">5%</td>
+      </tr>
+    </table>
+  </div>
+  
+
+  <div id="Students" class="tabcontent">
+    <ion-searchbar></ion-searchbar>
+   
+  
+
+    <ion-grid style="background-color: 	#FDF5E6;">
+
+      <ion-card>
+        <ion-title  style="text-align:center ; font-weight: bolder; font-style: italic; color:black;" >
+         {{ viewStud.length}} All Students</ion-title>
+      </ion-card>
+        
+          
+          <ion-card   style="background-color:rgb(160, 160, 160); border-radius:10px; width:500px ;"  *ngFor= "let item of viewStud " >
+           
+            <ion-label   style="color: rgb(167, 167, 167);" id="properties" >
+              
+             </ion-label>
+             <br>
+
+
+             <ion-label   style="color: black;" id="properties" >
+              Full names:{{item.Full_names}} 
+             </ion-label>
+             <br>
+
+
+
+
+             <ion-label   style="color: black;" id="properties" >
+              Last_name:{{item.Last_name}}
+             </ion-label>
+             <br>
+
+
+
+           <ion-label   style="color: black;" id="properties" >
+            Student Number:{{item.student_no}}
+           </ion-label>
+           <br>
+           
+           
+           <ion-label  style="color: black;" >
+            ID: {{item.Id_no}}
+           </ion-label>
+           <br>
+           <ion-label  style="color: black;" >
+            Gender:{{item.gender}}
+          </ion-label>
+          <br>
+          <ion-label  style="color: black;" >
+            Disability: {{item.disability}}
+           </ion-label>
+           <br>
+          <ion-label  style="color: black;" >
+          Guardian contact: {{contact_guardian}}
+          </ion-label>
+          <br>
+
+          <ion-label  style="color: black;" >
+           Student Contact : {{item.contact_student}}
+          </ion-label>
+          <br>
+
+          <ion-label  style="color: black;" >
+            Campus of Study : {{item.campus_study}}
+           </ion-label>
+           <br>
+
+
+
+
+           <ion-label  style="color: black;" >
+            Year of Admission : {{item.year_of_admission}}
+           </ion-label>
+           <br>
+
+           <ion-label  style="color: black;" >
+            Sponsor : {{item.sponsor}}
+           </ion-label>
+           <br>
+         </ion-card>
+      
+      
+        </ion-grid>
+
+
+
+  </div>
+  
+
+
+   </ion-content>
+
+
+
+
+
+

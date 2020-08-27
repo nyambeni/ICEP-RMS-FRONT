@@ -1,0 +1,71 @@
+ion-card{
+  margin-top: 40px;
+ 
+  height:110px;
+  width: 40%;
+
+  }
+  button{
+    padding-bottom: 130px;
+    padding-left: 10px;
+  }
+  .card11
+  {
+    ion-card{
+      
+      width: 300px; 
+      height: 250px;  
+      
+    }
+  
+  }
+  ion-card{
+    border-radius: 10% 10% 
+}
+
+li{
+    float: right;
+    list-style:none;
+    text-align: center;
+    width: 100px;
+    height: 15px;
+    line-height: 10px;
+    color: aliceblue;
+    text-decoration-line: none;
+    font-weight: bold;
+  }
+  ion-card{
+    border-radius: 5% 
+}
+option{
+  text-decoration-line: none;
+}
+.border
+{
+  //   border-bottom: solid ;
+  //   border-top: solid ;
+  //   border-left: solid ;
+  //   border-right: solid ;
+    color:black;
+    
+
+}
+.mycard{
+    ion-card{
+        height: 200px;
+    }
+}
+  a {
+
+    text-decoration-line: none;
+    font-style: initial;
+    color:rgb(7, 3, 83);
+    
+    
+  }
+  ion-label{
+      margin-left: 20px;
+  }
+  h1{
+      margin-left: 20px;
+  }

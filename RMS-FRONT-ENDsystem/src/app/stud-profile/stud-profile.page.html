@@ -1,0 +1,188 @@
+
+<ion-menu side="start" menuId="first" contentId="content1" color="dark">
+  <ion-header color="dark" >
+    <ion-toolbar color="dark">
+      
+    </ion-toolbar >
+  </ion-header >
+  <ion-card color="dark" style="  background: linear-gradient(60deg, #00FF7F 50%, lightseagreen 50%);border-radius: 50%; margin-left: 70px; text-align:center" > 
+    hello50
+  </ion-card>
+
+  <ion-content color="dark">
+  
+    <ion-list  color="dark" lines="none" *ngFor="let pages of navigate"  >
+     
+    <ion-menu-toggle auto-hide="true" color="dark">
+      <ion-item [routerLink]="pages.url" routerDirection="forward" lines="none" color="dark"  >
+          <ion-icon [name]="pages.icon" slot="start"></ion-icon>
+             {{pages.title}} 
+      </ion-item>
+    </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="content1" color="dark" ></ion-router-outlet>
+
+<ion-header color="dark">
+  <ion-toolbar color="dark">
+  
+      <ion-buttons slot="start" color="dark">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      
+  </ion-toolbar>
+</ion-header>
+      
+<ion-content style="background-image: url('assets/pics/student.jpg'); ; padding-top: -200px;" >
+
+
+
+  <ion-card style="margin-left:60px ;border-radius: 20px; height:50px ;background-color: white;color: rgb(6, 2, 73);">
+   
+    <ion-label style="color: rgb(6, 2, 73) ;margin-left: 60px;margin-top:-30px;font-size:14px; text-align: left;">
+    Profile
+    </ion-label>
+   </ion-card>
+  <ion-card style="background-color: rgb(6, 2, 73);
+  margin-left: 250px;margin-top: -60px;
+  border-radius: 20px; height:50px ;" >
+  
+  <ion-label style="color: black ;margin-left: 60px;margin-top:-30px;color:white; font-size:14px">
+  Update
+  </ion-label>
+  </ion-card>
+  
+  <ion-label style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;font-size: 30px;color: rgb(4, 4, 78); font-weight: bold;"> Update Profile</ion-label>
+  
+
+ 
+  <br>
+  <br>
+  <ion-card style="width: 500px;height: 600px;">
+  
+    <ion-label style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;font-size: 30px;color: rgb(4, 4, 78);font-weight: bold;"> Personal Details</ion-label>
+  <br><br>
+  <ion-label position="floating">Student Number</ion-label>
+    <ion-input [(ngModel)] = "studData.student_no" name="student_no" style="border:2px grey solid ;" type="text" ></ion-input>
+  <br>
+  <ion-label position="floating">Last Name</ion-label>
+  <ion-input [(ngModel)] = "studData.Last_name" name="Last_name" style="border:2px grey solid ;" type="text" ></ion-input>
+  <br>
+  <ion-label position="floating">Full Names</ion-label>
+  <ion-input [(ngModel)] = "studData.Full_names" name="Full_names" style="border:2px grey solid ;" type="text"></ion-input>
+  <br>
+  <ion-label position="floating">ID Number</ion-label>
+  <ion-input [(ngModel)] = "studData.Id_no" name="Id_no" style="border:2px grey solid ;" type="text"></ion-input>
+  <br>
+
+  <ion-label position="floating">Gender</ion-label>
+  <ion-select [(ngModel)] = "studData.gender" name="gender" style="border:2px grey solid ;" position="floating"type="text" placeholder="Select gender">
+    <ion-select-option value="FEMALE">FEMALE</ion-select-option>
+    <ion-select-option value="MALE">MALE</ion-select-option>
+  </ion-select>
+  <br>
+  
+  
+  <ion-label style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;font-size: 30px;color: rgb(4, 4, 78);font-weight: bold;"> Disability Details</ion-label>
+  <br>
+  
+  <ion-toggle [(ngModel)] = "studData.disability" name ="disability" checked="false"size="">
+   
+  </ion-toggle>
+  <ion-label> Do you have disability?</ion-label>
+  <br>
+  </ion-card>
+  <br>
+
+  <ion-card style="width: 500px;height: 300px;">
+      <ion-label style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;font-size: 30px;color: rgb(4, 4, 78);font-weight: bold;"> Contact Details</ion-label>
+    <br><br>
+    <ion-label position="floating">Cell Number</ion-label>
+      <ion-input [(ngModel)] = "studData.contact_student" name="contact_student" style="border:2px grey solid ;" type="text" ></ion-input>
+      <br>
+      <ion-label position="floating">Aternative Number</ion-label>
+      <ion-input [(ngModel)] = "studData.contact_guardian" name="contact_guardian" style="border:2px grey solid ;" type="text" ></ion-input>
+      <br>
+      <ion-label position="floating">Email Address</ion-label>
+    <ion-input [(ngModel)] = "studData.stud_email" name="stud_email" style="border:2px grey solid ;" type="text" ></ion-input>
+    <br>
+    </ion-card>
+
+    <br>
+    
+  <ion-card style="width: 500px;height: 250px;">
+      <ion-label style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;font-size: 30px;color: rgb(4, 4, 78);font-weight: bold;">Medical Details</ion-label>
+    <br><br>
+    <ion-label position="floating">Name allergies if there are any</ion-label>
+      <ion-input style="border:2px grey solid ;"type="text"></ion-input>
+      <br>
+      <ion-label position="floating">Name diseases if there are any</ion-label>
+      <ion-input style="border:2px grey solid ;" position="floating"type="text" ></ion-input>
+     
+    <br>
+    </ion-card>
+ 
+  <br>
+
+  <ion-card  style="width: 500px;height: 400px;">
+  <ion-label style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;font-size: 30px;color: rgb(4, 4, 78);font-weight: bold;"> Course Details</ion-label>
+  <br>
+    <br>
+    <ion-label position="floating">Course Name</ion-label>
+    <ion-select [(ngModel)] = "studData.course" name="course" style="border:2px grey solid ;" position="floating"type="text" placeholder="Select your course">
+      <ion-select-option value="Information Technology">Information Technology</ion-select-option>
+      <ion-select-option value="Electrical engineering">Electrical engineering</ion-select-option>
+      <ion-select-option value="Bio-Tech">Bio-Tech</ion-select-option>
+    </ion-select>
+    <br>
+    <ion-label position="floating">Payments</ion-label>
+    <ion-select [(ngModel)] = "studData.sponsor" name="payment" style="border:2px grey solid ;" position="floating"type="text" placeholder="Select your sponsor">
+      <ion-select-option value="Cash">Cash</ion-select-option>
+      <ion-select-option value="NSFAS">NSFAS</ion-select-option>
+      <ion-select-option value="Other bursaries">Other bursaries</ion-select-option>
+    </ion-select>
+  
+    <br>
+    <ion-label position="floating">Faculty</ion-label>
+    <ion-select [(ngModel)] = "studData.faculty" name="faculty" style="border:2px grey solid ;" type="text" placeholder="Select your faculty">
+      <ion-select-option value="ICT">ICT</ion-select-option>
+      <ion-select-option value="Science">Science</ion-select-option>
+     
+    </ion-select>
+    <br>
+    <ion-label position="floating">Year of adimission</ion-label>
+    <ion-input [(ngModel)] = "studData.year_of_admission" name="year_of_admission" 
+    style="border:2px grey solid ;" type="text" ></ion-input>
+  
+    <br>
+    </ion-card>
+
+    <br>
+    
+  <ion-card  style="width: 500px;height: 200px;">
+    <ion-label style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;font-size: 30px;color: rgb(4, 4, 78);font-weight: bold;">Resident Applicantion</ion-label>
+    <br><br>
+    <ion-label position="floating">Campus</ion-label>
+      <ion-select [(ngModel)] = "studData.campus_study" name="campus_study" style="border:2px grey solid ;" position="floating"type="text" placeholder="Select Campus">
+        <ion-select-option value="Arcadia">Arcadia</ion-select-option>
+        <ion-select-option value="Main">Main Camp</ion-select-option>
+        <ion-select-option value="rankuwa">Ga-rankuwa</ion-select-option>
+        <ion-select-option value="Soshanguve">Soshanguve </ion-select-option>
+        <ion-select-option value="north">Soshanguve north</ion-select-option>
+      </ion-select>
+      <br>
+
+      <ion-select style="border:2px grey solid ;" position="floating"type="text" placeholder="Select Residence">
+        </ion-select>
+      </ion-card>
+    <div style="text-align: center;">
+      <ion-button outline color="danger">Previous</ion-button>
+      <ion-button outline color="primary" (click)="addStud()">Finish</ion-button>  
+    </div>
+   
+</ion-content>
+ 
+
+
+ 

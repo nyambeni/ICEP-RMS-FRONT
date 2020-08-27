@@ -1,0 +1,66 @@
+
+  <ion-app >
+    <!-- <ion-split-pane   contentId="main-content"   >
+      <ion-menu    contentId="main-content" type="overlay" > -->
+        <!-- <ion-header>
+          <ion-toolbar translucent >
+            <ion-title style="text-align: center">Welcome to Tethures</ion-title>
+          </ion-toolbar>
+        </ion-header> -->
+
+     
+        <ion-content  style="margin-top: 0;margin-left: 0; " >
+        
+          
+
+         
+          <!-- <ion-list  id="home-list"  >
+            
+  
+            <ion-menu-toggle   auto-hide="false" *ngFor="let p of appPages; let i = index" >
+              <ion-item    style="background-color: chartreuse;" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+                <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list> -->
+  
+  
+         
+          <ion-list id="labels-list"  >
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            
+  
+   
+            <ion-item  style="background-color:rgb(3, 14, 15);"   *ngFor="let label of labels" lines="none">
+              <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+              <ion-label style="background-color:rgb(3, 14, 15);"   >{{ label }}</ion-label>
+  
+            </ion-item>
+   
+          </ion-list>
+  
+  
+         
+  
+        </ion-content>
+      <!-- </ion-menu> -->
+      <ion-router-outlet id="main-content"></ion-router-outlet>
+    <!-- </ion-split-pane> -->
+  </ion-app>
+  

@@ -1,0 +1,79 @@
+fieldset {
+    border: 0;
+    margin-left: -10px;  
+}
+
+ion-select-option 
+{
+    border: solid black 1px;
+    border-radius: 10px;  
+}
+
+on-select
+{
+    border: solid black 1px;
+    border-radius: 10px;   
+}
+
+ion-content{
+
+    --ion-background-color:rgb(3, 1, 32);
+    
+}
+
+ion-item{
+    color:white;
+    text-align: left;
+    color: rgb(8, 243, 106);
+    border-bottom: solid 1px;
+}
+ion-input
+{
+    color: white;
+}
+ion-button{
+
+color: black;
+}
+ion-icon{
+    color: white;
+}
+
+h1{
+    background-color: rgb(8, 243, 106);
+    color:rgb(3, 1, 32) ;
+    margin-right: 340px;
+    margin-left: 340px;
+}
+li{
+   float: right;
+   list-style:none;
+   text-align: center;
+   width: 95px;
+   height: 15px;
+   line-height: 10px;
+   color: aliceblue;
+  
+  
+  }
+  a {
+
+    display: inline-block;
+    color: white;
+    padding: 8px 8px;
+    text-align: center;
+    font-style: initial;
+    text-decoration-line: none;
+  }
+  img{
+    text-align:left;
+    font-size: small; 
+   }
+  
+//   a:hover {
+    
+//     color: black;
+//   }
+  ul{
+    text-align: center;
+  }

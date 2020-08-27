@@ -1,0 +1,168 @@
+  
+
+
+ <ion-content >
+  <ion-toolbar>
+    <div slot="start" style="font-size: small; ">
+      <img src=" assets/pics/logo.png" width="80px" height="40px" alt="">
+     </div>
+    <ul class="sidebar-nav" style="text-align: center;font-size: small">
+      <li><a routerLink="/help/helpstud">HELP</a></li>
+      <li><a routerLink="#">FAQS</a></li>
+      <li><a routerLink="/folder/home">HOME</a></li>
+    </ul>
+    <br>
+  </ion-toolbar>
+
+  <br><br> <br> <br>
+
+  <p style="margin-top:-10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;
+  color: white;text-align:left">Register to create an account</p>
+  <div class="container">
+  <form novalidate
+      [formGroup]="myform" >
+
+  
+
+
+
+  
+
+
+  <div class="form-group"
+       [ngClass]="{
+        'has-danger': studno.invalid && (studno.dirty || studno.touched),
+        'has-success': studno.valid && (studno.dirty || studno.touched)
+   }">
+   <ion-item>
+   <ion-label position="floating"><ion-icon name="person"></ion-icon> STUDENT NUMBER</ion-label>
+    <ion-input type="number"
+    required  [(ngModel)] = "stuData.studno"
+           class="form-control"
+           formControlName="studno"
+           required>
+           </ion-input>
+    <div class="form-control-feedback"
+         *ngIf="studno.errors && (studno.dirty || studno.touched)">
+      <p style="color:red" *ngIf="studno.errors.required">Student Number is required</p>
+     
+    </div>
+  </ion-item>
+
+    
+
+  </div>
+
+
+  <div class="form-group"
+       [ngClass]="{
+        'has-danger': password.invalid && (password.dirty || password.touched),
+        'has-success': password.valid && (password.dirty || password.touched)
+   }">
+   <ion-item>
+   <ion-label position="floating"><ion-icon name="lock-closed"></ion-icon> CREATE PASSWORD</ion-label>
+   
+    <ion-input   name ="password"
+    required  [(ngModel)] = "stuData.password" 
+    type="password"
+           class="form-control"
+           formControlName="password"
+        
+           required>
+           </ion-input>
+
+  
+
+    <span style="color: red;" *ngIf="confirm.touched && confirm.errors?.required">
+     password is required
+
+     </span>
+  </ion-item>
+
+</div>
+
+<div class="form-group"
+   >
+   <ion-item>
+   <ion-label position="floating"> <ion-icon name="lock-closed"></ion-icon> CONFIRM PASSWORD</ion-label>
+   
+   
+    <ion-input name="confirm" appConfirmEqualValidator="password" required  [(ngModel)] = "stuData.confirm"
+  
+    type="password"
+    class="form-control"
+           formControlName="confirm"
+        
+           required>   
+
+           </ion-input>
+
+           <div class="form-control-feedback">
+           <span style="color: red;" *ngIf="confirm.touched && confirm.errors?.required">
+         confirm password is required
+
+        </span>
+
+        <span style="color: red;" *ngIf="confirm.touched && confirm.errors?.notEqual && !confirm.errors?.required">
+          Password and confirm password does not match
+
+        </span>
+      </div>
+   
+  </ion-item>
+
+</div>
+
+
+
+<br>
+<p style="color: white;">By signing up, you confirm that you've read
+   and accepted our <a href="https://tres-images-storage.s3-eu-west-1.amazonaws.com/Privacy+Policy+20200408.pdf" style="color: rgb(8, 243, 106);;">Terms of Service and Privacy Policy</a></p>
+<br>
+
+  <ion-button expand="block" color="success" (click)=" add()">
+    
+    SIGN UP
+  </ion-button>
+  <br>
+  <p style="color: white; text-align: right;">Have an account? sign in <a routerLink="/login1" style="color: rgb(8, 243, 106);;">here</a></p>
+ 
+  </form>
+</div>
+</ion-content>
+
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+    

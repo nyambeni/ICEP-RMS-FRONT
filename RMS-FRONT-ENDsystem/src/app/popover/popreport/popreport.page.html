@@ -1,0 +1,49 @@
+
+<ion-content style="margin-left: 10px;margin-left: 10px;">
+
+  
+
+  <h1 style="font-size: 16px; font-weight: bold; text-align: left;
+  margin-top: 10px; margin-left: 40px;border-left: 10px 	rgb(83, 218, 83) solid;">
+  Issue logging Dialog</h1>
+
+
+  <p style="font-size: 14px; font-weight: bold; text-align: center;">Report all issues regarding your room</p>
+
+  <ion-select  [(ngModel)] = "issueData.Issue_type" name="Issue_type" placeholder="Issue type"   >
+    <ion-select-option value="Maintence">Maintence</ion-select-option>
+    <ion-select-option value="Appliances">Appliances</ion-select-option>
+    <ion-select-option value="Past invasions">Past invasions</ion-select-option>
+  </ion-select>
+<br>
+<ion-label style="margin-left: 10px;margin-left: 10px;">Issue description </ion-label>
+<ion-input  [(ngModel)] = "issueData.description"  name="description" placeholder="Issue description" ></ion-input>
+ <br>
+ <ion-label style="margin-left: 10px;margin-left: 10px;"> Your Student Number </ion-label>
+ <ion-input   [(ngModel)] = "issueData.student_no" nane="student_no" placeholder="Your Student Number" ></ion-input>
+ <br>
+ 
+ <div class="form-group">
+       
+  <ion-label style="margin-left: 10px;margin-left: 10px;">Upload a picture of an issue</ion-label>
+  <br>
+  <ion-input type="file" name="images" ></ion-input>
+
+</div>
+<br>
+
+ <ion-toolbar>
+  <div slot="start">
+    <ion-button   (click)="AlertPrompt()" color = "tertiary" size ="small" style="text-transform: none;">Submit</ion-button>
+    </div>
+
+  <div slot="end">
+    <ion-button  (click)="closePop()" color="danger" size ="small" style="text-transform: none;">Cancel</ion-button>
+  </div>
+  
+</ion-toolbar>
+  
+
+
+
+</ion-content>

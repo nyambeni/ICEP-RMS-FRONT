@@ -1,0 +1,71 @@
+ion-content{
+
+    --ion-background-color:rgb(3, 1, 32);
+    text-align: center;
+    
+}
+
+ion-item{
+    color:white;
+    text-align: left;
+    color: rgb(8, 243, 106);
+    border-bottom: solid 2px;
+}
+ion-input
+{
+    color: white;
+}
+ion-button{
+
+color: black;
+}
+ion-icon{
+    color: white;
+}
+
+h1{
+    background-color: rgb(8, 243, 106);
+    color:rgb(3, 1, 32) ;
+    margin-right: 340px;
+    margin-left: 340px;
+}
+li{
+    float: right;
+    list-style:none;
+    text-align: center;
+    width: 95px;
+    height: 15px;
+    line-height: 10px;
+    color: aliceblue;
+  
+  
+  }
+  img{
+    text-align:left;
+    font-size: small; 
+   }
+  a {
+
+    text-decoration-line: none;
+    color: white;
+    padding: 8px 8px;
+    font-style: initial;
+    text-align: center;
+  }
+  .hover{
+    a:hover{
+      background-color: transparent;
+    }
+  }
+  a:hover {
+    background-color: rgb(244, 241, 248);
+    color: black;
+  }
+  ul{
+    text-align: center;
+    
+  }
+  ion-input
+  {
+      color: white;
+  }
